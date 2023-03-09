@@ -75,7 +75,7 @@ namespace CF_P2P
             WebClient webClient = new WebClient();
             string Filename = webClient.DownloadString("p2p.zortos.me/api/getfilename/" + username);
             File_Downloader("p2p.zortos.me/api/getfilename/" + username, Path.GetTempPath() + Filename, Filename);
-            
+            Login.KeyAuthApp.setvar("Download", "");
            
         }
         
@@ -88,7 +88,7 @@ namespace CF_P2P
         {
            if (!string.IsNullOrEmpty(Login.KeyAuthApp.getvar("Download")))
            {
-                
+                DownloadFile(Login.KeyAuthApp.user_data.username);
            }
         }
     }

@@ -53,9 +53,14 @@ namespace CF_P2P
                 UploadProgressbar.Visible = true;
                 new Task(new Action(() => { progressTracker(fileToUpload, ref keepTracking); })).Start();
                 var result = httpClient.SendAsync(msg).Result;
+                if (!result.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("FILE TOO BIG\nCant transfer big files for now ;)");
+                }
                 keepTracking = false; //stops the tracking thread
                 UploadProgressbar.Visible = false;
                 UploadProgressbar.Value = 0;
+                UploadLBL.Text = "Upload Finished";
             }
             
 

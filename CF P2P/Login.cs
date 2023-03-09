@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,7 +55,16 @@ namespace CF_P2P
             }
             else
             {
-                if (FileDialog.e)
+              if (Directory.Exists("C:\\asgard"))
+              {
+                  GFN gFN = new GFN();
+                  gFN.Show();
+                  this.Close();
+              }
+              else
+              {
+
+              }
             }
         }
     }
