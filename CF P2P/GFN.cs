@@ -73,9 +73,11 @@ namespace CF_P2P
         void DownloadFile(string username)
         {
             WebClient webClient = new WebClient();
+
             string Filename = webClient.DownloadString("http://node.zortos.me:5050/api/getfilename/" + username);
             File_Downloader("http://node.zortos.me:5050/api/download/" + username, Path.GetTempPath() + Filename, Filename);
-            
+            Login.KeyAuthApp.setvar("Download", "");
+
            
         }
         
@@ -90,6 +92,7 @@ namespace CF_P2P
            {
                 DownloadFile(Login.KeyAuthApp.user_data.username);
                 Login.KeyAuthApp.setvar("Download","");
+
            }
         }
     }
