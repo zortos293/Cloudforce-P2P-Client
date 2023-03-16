@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -25,7 +26,7 @@ namespace CF_P2P
         {
 
         }
-
+        public string PreviusDownlaod;
         private bool DownloadFinished;
         public void File_Downloader(string URL, string path, string filename)
         {
@@ -48,7 +49,7 @@ namespace CF_P2P
             if (e.Error == null)
             {
                 DownloadFinished = true;
-                DownloadProgressbar.Invoke(new MethodInvoker(delegate { DownloadProgressbar.Visible = false; }));
+                
                 DownloadProgressbar.Invoke(new Action(() => DownloadProgressbar.Value = 0));
 
                 ((WebClient)sender).Dispose();
@@ -57,8 +58,8 @@ namespace CF_P2P
             {
                
                 MessageBox.Show(e.Error.Message);
-                DownloadProgressbar.Invoke(new Action(() => DownloadProgressbar.Visible = false));
-                
+                Login.KeyAuthApp.setvar("Download", "");
+
             }
         }
 
@@ -69,16 +70,31 @@ namespace CF_P2P
         }
 
 
+        public async Task ExtractZipFileAsync(string zipFilePath, string extractPath)
+        {
+            await Task.Run(() => ZipFile.ExtractToDirectory(zipFilePath, extractPath));
 
-        void DownloadFile(string username)
+        }
+        public async Task ExtractZipFileAndWaitAsync(string zipFilePath, string extractPath)
+        {
+            await ExtractZipFileAsync(zipFilePath, extractPath);
+            // The following line of code will only execute after the async extraction is complete.
+            
+        }
+        async void DownloadFile(string username)
         {
             WebClient webClient = new WebClient();
-
-            string Filename = webClient.DownloadString("http://node.zortos.me:5050/api/getfilename/" + username);
-            File_Downloader("http://node.zortos.me:5050/api/download/" + username, Path.GetTempPath() + Filename, Filename);
             Login.KeyAuthApp.setvar("Download", "");
+            string Filename = webClient.DownloadString("http://node.zortos.me:5050/api/getfilename/" + username);
+            File_Downloader("http://node.zortos.me:5050/api/download/" + username, "c:\\ZortosP2P\\" + Filename, Filename);
+            DownloadLBL.Text = "Downloaded " + Filename + " to c:\\ZortosP2P\\";
+            if (Filename.EndsWith(".zip"))
+            {
+                await ExtractZipFileAndWaitAsync("C:\\ZortosP2P\\" + PreviusDownlaod, "c:\\ZortosP2P\\");
 
-           
+
+            }
+
         }
         
         private void UploadLBL_Click(object sender, EventArgs e)
@@ -91,9 +107,14 @@ namespace CF_P2P
            if (!string.IsNullOrEmpty(Login.KeyAuthApp.getvar("Download")))
            {
                 DownloadFile(Login.KeyAuthApp.user_data.username);
-                Login.KeyAuthApp.setvar("Download","");
+                
 
            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
