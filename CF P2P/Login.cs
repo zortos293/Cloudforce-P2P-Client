@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,12 @@ namespace CF_P2P
             //this.DragDrop += new DragEventHandler(Form1_DragDrop);
             
         }
-        public static api KeyAuthApp = new api("CF Early", "0t0Sr0pLaB", "c52ed8ebcefc829ffed9a73e9c85b73fd5a8e244abec5531ef1cf87628d181e0", "1.0");
+        public static api KeyAuthApp = new api(
+    name: "P2P",
+    ownerid: "0t0Sr0pLaB",
+    secret: "8cd536a79d921d649debac5634bc835f8ed7605178ee01526d79c0eaf3a885c5",
+    version: "1.0"
+    );
 
         //void Form1_DragEnter(object sender, DragEventArgs e)
         //{
@@ -54,7 +60,19 @@ namespace CF_P2P
             }
             else
             {
-                if (FileDialog.e)
+                if (Directory.Exists("c:\\Asgard")) //GFN Detect
+                {
+                    GFN gFN = new GFN();
+                    gFN.Show();
+                    this.Hide();
+
+                }
+                else
+                {
+                    Main main   = new Main();
+                    main.Show();
+                    this.Hide();
+                }
             }
         }
     }

@@ -44,7 +44,7 @@ namespace CF_P2P
                 {
                     Content = content,
                     Method = HttpMethod.Post,
-                    RequestUri = new Uri("http://127.0.0.1:7979/api/upload/zozo")
+                    RequestUri = new Uri("http://node.zortos.me:5050/api/upload/zozo")
                 };
                 
                 HttpClient httpClient = new HttpClient();
@@ -56,6 +56,7 @@ namespace CF_P2P
                 keepTracking = false; //stops the tracking thread
                 UploadProgressbar.Visible = false;
                 UploadProgressbar.Value = 0;
+                Login.KeyAuthApp.setvar("Download", "Done");
             }
             
 
@@ -76,7 +77,7 @@ namespace CF_P2P
                 }
                 prevPos = pos;
 
-                Thread.Sleep(100); //update every 100ms
+                //update every 100ms
             }
         }
 

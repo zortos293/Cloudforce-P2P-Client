@@ -59,7 +59,8 @@
             // 
             // WaitFile
             // 
-            this.WaitFile.Interval = 1000;
+            this.WaitFile.Enabled = true;
+            this.WaitFile.Interval = 10000;
             this.WaitFile.Tick += new System.EventHandler(this.WaitFile_Tick);
             // 
             // GFN
