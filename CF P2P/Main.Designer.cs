@@ -81,7 +81,7 @@
             this.UploadLBL.Name = "UploadLBL";
             this.UploadLBL.Size = new System.Drawing.Size(776, 21);
             this.UploadLBL.TabIndex = 10;
-            this.UploadLBL.Text = "Uploading";
+            this.UploadLBL.Text = "Waiting for Uploads";
             this.UploadLBL.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2HtmlLabel2

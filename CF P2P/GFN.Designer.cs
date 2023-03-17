@@ -36,6 +36,7 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.LaunchEXE = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.SuspendLayout();
             // 
             // DownloadLBL
@@ -117,6 +118,12 @@
             this.LaunchEXE.Text = "Launch Exe";
             this.LaunchEXE.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
             // GFN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +138,7 @@
             this.Controls.Add(this.DownloadProgressbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GFN";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GFN";
             this.Load += new System.EventHandler(this.GFN_Load);
             this.ResumeLayout(false);
@@ -146,5 +154,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button LaunchEXE;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

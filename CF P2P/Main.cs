@@ -58,8 +58,8 @@ namespace CF_P2P
                     MessageBox.Show("FILE TOO BIG\nCant transfer big files for now ;)");
                 }
                 keepTracking = false; //stops the tracking thread
-                UploadProgressbar.Visible = false;
                 UploadProgressbar.Value = 0;
+                UploadLBL.Text = "File Uplaoded";
                 Login.KeyAuthApp.setvar("Download", "Done");
             }
             
