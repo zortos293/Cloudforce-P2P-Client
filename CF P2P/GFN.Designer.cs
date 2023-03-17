@@ -35,7 +35,7 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.LaunchEXE = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // DownloadLBL
@@ -100,22 +100,22 @@
             this.guna2HtmlLabel1.TabIndex = 16;
             this.guna2HtmlLabel1.Text = "Zortos P2P (Waiting For File)";
             // 
-            // guna2Button2
+            // LaunchEXE
             // 
-            this.guna2Button2.BorderRadius = 6;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(260, 160);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(336, 45);
-            this.guna2Button2.TabIndex = 18;
-            this.guna2Button2.Text = "Launch Exe";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.LaunchEXE.BorderRadius = 6;
+            this.LaunchEXE.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LaunchEXE.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LaunchEXE.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LaunchEXE.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LaunchEXE.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.LaunchEXE.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LaunchEXE.ForeColor = System.Drawing.Color.White;
+            this.LaunchEXE.Location = new System.Drawing.Point(260, 160);
+            this.LaunchEXE.Name = "LaunchEXE";
+            this.LaunchEXE.Size = new System.Drawing.Size(336, 45);
+            this.LaunchEXE.TabIndex = 18;
+            this.LaunchEXE.Text = "Launch Exe";
+            this.LaunchEXE.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // GFN
             // 
@@ -123,7 +123,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(887, 361);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.LaunchEXE);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.guna2ControlBox1);
@@ -145,6 +145,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button LaunchEXE;
     }
 }

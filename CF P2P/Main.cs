@@ -44,7 +44,7 @@ namespace CF_P2P
                 {
                     Content = content,
                     Method = HttpMethod.Post,
-                    RequestUri = new Uri("http://node.zortos.me:5050/api/upload/zozo")
+                    RequestUri = new Uri("http://node.zortos.me:5050/api/upload/"+ Login.KeyAuthApp.user_data.username)
                 };
                 
                 HttpClient httpClient = new HttpClient();

@@ -79,7 +79,7 @@ namespace CF_P2P
         {
             await ExtractZipFileAsync(zipFilePath, extractPath);
             // The following line of code will only execute after the async extraction is complete.
-            
+            DownloadLBL.Text = "Extracted to c:\\ZortosP2P\\";
         }
         async void DownloadFile(string username)
         {
@@ -90,9 +90,14 @@ namespace CF_P2P
             DownloadLBL.Text = "Downloaded " + Filename + " to c:\\ZortosP2P\\";
             if (Filename.EndsWith(".zip"))
             {
+                DownloadLBL.Text = "Extracting " + Filename + " to c:\\ZortosP2P\\";
                 await ExtractZipFileAndWaitAsync("C:\\ZortosP2P\\" + PreviusDownlaod, "c:\\ZortosP2P\\");
 
 
+            }
+            if (Filename.EndsWith(".exe"))
+            {
+               
             }
 
         }
