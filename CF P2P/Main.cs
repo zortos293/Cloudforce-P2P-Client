@@ -70,20 +70,29 @@ namespace CF_P2P
         void progressTracker(FileStream streamToTrack, ref bool keepTracking)
         {
             int prevPos = -1;
-            while (keepTracking)
-            {
-                int pos = (int)Math.Round(100 * (streamToTrack.Position / (double)streamToTrack.Length));
-                if (pos != prevPos)
+                while (keepTracking)
                 {
-                    UploadLBL.Text = "Uploading " + prevPos + "%";
-                    UploadProgressbar.Value = pos;
+                    try
+                    {
+                        int pos = (int)Math.Round(100 * (streamToTrack.Position / (double)streamToTrack.Length));
+                        if (pos != prevPos)
+                        {
+                            UploadLBL.Text = "Uploading " + prevPos + "%";
+                            UploadProgressbar.Value = pos;
 
+                        }
+                        prevPos = pos;
+                    }
+                    catch (Exception e)
+                    {
+                         keepTracking = false;
+                    }
+
+                    //update every 100ms
+                    // fix bug
                 }
-                prevPos = pos;
 
-                //update every 100ms
-                // fix bug
-            }
+           
         }
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
