@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GFN));
             this.DownloadLBL = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.DownloadProgressbar = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.WaitFile = new System.Windows.Forms.Timer(this.components);
@@ -138,6 +139,7 @@
             this.Controls.Add(this.DownloadLBL);
             this.Controls.Add(this.DownloadProgressbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GFN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GFN";
