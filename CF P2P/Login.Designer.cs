@@ -48,7 +48,7 @@
             this.Username.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Username.ForeColor = System.Drawing.Color.White;
             this.Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Username.Location = new System.Drawing.Point(84, 70);
+            this.Username.Location = new System.Drawing.Point(84, 93);
             this.Username.Name = "Username";
             this.Username.PasswordChar = '\0';
             this.Username.PlaceholderText = "Username";
@@ -70,7 +70,7 @@
             this.Password.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Password.ForeColor = System.Drawing.Color.White;
             this.Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Password.Location = new System.Drawing.Point(84, 123);
+            this.Password.Location = new System.Drawing.Point(84, 130);
             this.Password.Name = "Password";
             this.Password.PasswordChar = '\0';
             this.Password.PlaceholderText = "Password";
@@ -118,7 +118,8 @@
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Username);
             this.Name = "Login";
-            this.Text = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CF P2P Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
