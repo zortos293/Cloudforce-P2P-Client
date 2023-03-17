@@ -116,6 +116,7 @@
             this.LaunchEXE.Size = new System.Drawing.Size(336, 45);
             this.LaunchEXE.TabIndex = 18;
             this.LaunchEXE.Text = "Launch Exe";
+            this.LaunchEXE.Visible = false;
             this.LaunchEXE.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2DragControl1
