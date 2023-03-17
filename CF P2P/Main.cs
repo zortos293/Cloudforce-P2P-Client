@@ -85,5 +85,9 @@ namespace CF_P2P
             }
         }
 
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
