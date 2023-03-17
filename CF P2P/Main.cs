@@ -82,6 +82,7 @@ namespace CF_P2P
                 prevPos = pos;
 
                 //update every 100ms
+                // fix bug
             }
         }
 
