@@ -91,7 +91,7 @@ namespace CF_P2P
             if (Filename.EndsWith(".zip"))
             {
                 DownloadLBL.Text = "Extracting " + Filename + " to c:\\ZortosP2P\\";
-                await ExtractZipFileAndWaitAsync("C:\\ZortosP2P\\" + PreviusDownlaod, "c:\\ZortosP2P\\");
+                await ExtractZipFileAndWaitAsync("C:\\ZortosP2P\\" + Filename, "c:\\ZortosP2P\\");
 
 
             }

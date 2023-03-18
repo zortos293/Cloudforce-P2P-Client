@@ -22,10 +22,12 @@ namespace CF_P2P
             this.AllowDrop = true;
             this.DragEnter += new DragEventHandler(Form1_DragEnter);
             this.DragDrop += new DragEventHandler(Form1_DragDrop);
+            Login.KeyAuthApp.setvar("Download", "");
         }
 
         void Form1_DragEnter(object sender, DragEventArgs e)
         {
+            
             if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
         }
 
